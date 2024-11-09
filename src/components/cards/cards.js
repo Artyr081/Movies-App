@@ -16,6 +16,7 @@ export default function Cards() {
     const [guestSessionId, setGuestSessionId] = useState(null);
     const [search, setSearch] = useState('return');
     const [tabRatedMovies, setTabRatedMovies] = useState(false);
+    const [stars, setStars] = useState({});
     const swapi = new SwapiService();
 
     useEffect(() => {
@@ -102,6 +103,10 @@ export default function Cards() {
 
     const handleRateChange = (movieId, rating) => {
         setLoading(true);
+        setStars((prevRatings) => ({
+            ...prevRatings,
+            [movieId]: rating
+        }));
         swapi.getMovieRating(movieId, guestSessionId, rating)
         setLoading(false);
     }
@@ -122,7 +127,7 @@ export default function Cards() {
             {error === true && <Alert message='Error' description='Произошла ошибка, проверьте интернет соединение' type="error" closable />}
             <Tab hundleTabsClick={hundleTabsClick} />
             {tabRatedMovies === false && <Search className='search' onSearch={onSearch} />}
-            <Card loading={loading} title={title} error={error} handleRateChange={handleRateChange} />
+            <Card loading={loading} title={title} error={error} handleRateChange={handleRateChange} stars={stars}/>
             <Pagination current={currentPage} total={totalResults} onChange={handlePageChange} className='pagination' />
         </>
     );

@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import './card.css';
 import { GenreContext } from '../context/context';
 
-export default function Card({loading, title, handleRateChange}) {
+export default function Card({loading, title, handleRateChange, stars}) {
     const genres = useContext(GenreContext);
     function shortWord(str, countSimbol) {
         const newstr = str.split(' ');
@@ -87,7 +87,7 @@ export default function Card({loading, title, handleRateChange}) {
                             {item.genre_ids && item.genre_ids.map((genreId) => <Tag key={genreId} className='card__genres_margin'>{genres[genreId]}</Tag>)}
                         </div> 
                         <p className='card__text'>{shortWord(item.overview, 122)}</p>
-                        <Rate allowHalf count={10} value={item.rating} onChange={(value) => handleRateChange(item.id, value)} className='card__rate' />
+                        <Rate allowHalf count={10} value={stars[item.id]} onChange={(value) => handleRateChange(item.id, value)} className='card__rate' />
                     </div>
                 </li>
             ))}
