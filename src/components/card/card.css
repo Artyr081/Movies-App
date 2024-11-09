@@ -1,0 +1,164 @@
+.ant-rate {
+    display: block;
+    margin-left: -24px;
+    scale: 0.85;
+}
+
+.card__item {
+    padding: 0;
+    max-width: 1010px;
+    height: 100vh;
+    background-color: #FFF;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 451px 451px;
+    gap: 36px;
+    overflow-x: hidden;
+    padding-top: 36px;
+    margin-top: 10px;
+    scrollbar-width: none;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    justify-content: center;
+}
+    
+
+.card__list {
+    display: flex;
+    box-shadow: 0px 4px 12px 0px #00000026;
+    max-width: 451px;
+    height: 279px;
+}
+
+.card__img {
+    width: 50%;
+    margin-right: 20px;
+}
+
+.ant-image .ant-image-img {
+    width: 13em;
+    height: 19.9em;
+}
+
+.card__poster {
+    margin-right: 20px;
+    width: 13em;
+    height: 19.9em;
+}
+
+.card__title {
+    margin-top: 3px;
+    margin-bottom: 0px;
+}
+
+.card__text {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.card__average {
+    float: right;
+    margin-top: 18px;
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #E90000;
+    text-align: center;
+    line-height: 30px;
+}
+
+.tomato {
+    border-color: #E97E00;
+}
+
+.yellow {
+    border-color: #E9D100;
+}
+
+.green {
+    border-color: #66E900;
+}
+
+.card__genres {
+    margin-top: 10px;
+}
+
+.card__genres_margin {
+    margin: 2px;
+}
+
+@media (max-width: 995px) {
+    .card__item {
+        gap: 10px;
+        grid-template-columns: 430px 430px;
+    }
+}
+
+@media (max-width: 910px) {
+    .card__item {
+        grid-template-columns: 1fr;
+    }
+
+    .card__list {
+        max-width: 100vw;
+    }
+
+    .card__img {
+        max-width: 269px;
+    }
+}
+
+@media (max-width: 515px) {
+    .card__list {
+        height: 245px;
+        position: relative;
+    }
+
+    .card__img {
+        max-width: 60px;
+        max-height: 91px;
+    }
+
+    .ant-image .ant-image-img {
+        width: 5em;
+        height: 7em;    
+    }
+
+    .card__title {
+        margin-right: 30px;
+    }
+
+    .card__text {
+        position: absolute;
+        left: 0;
+    }
+
+    .card__rate {
+        position: absolute;
+        bottom: 8px;
+        right: 2px;
+    }
+
+    .card__average {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        margin: 0;
+    }
+
+    .ant-image-mask {
+        max-width: 60px;
+        max-height: 91px;
+    }
+
+    .card__poster {
+        width: 60px;
+        height: 91px;
+    }
+
+    .card__genres {
+        position: relative;
+    }
+}

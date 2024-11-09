@@ -1,0 +1,17 @@
+.main {
+    margin: 0px;
+    padding: 0px;
+    background-color: #F7F7F7;
+}
+
+.card__img {
+    max-width: 183px;
+    max-height: 281px;
+}
+
+.cards {
+    max-width: 1010px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
