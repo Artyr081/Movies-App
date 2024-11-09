@@ -10,7 +10,7 @@ export default function Card({loading, title, handleRateChange}) {
     function shortWord(str, countSimbol) {
         const newstr = str.split(' ');
         let exitStr = '';
-        
+
         // eslint-disable-next-line no-restricted-syntax
         for(const i of newstr) {
             if(exitStr.length + i.length + 1 <= countSimbol) {
@@ -50,7 +50,7 @@ export default function Card({loading, title, handleRateChange}) {
 
     const notFound = title && title.length === 0 && !loading ? <Alert message="Error Text" description="По вашему запросу не найдено ничего" type="error" closable /> : null;
     const content = loading ? <Spin className='spin' /> : null;
-    const spiner = !loading && title.length > 0 ? 
+    const spiner = !loading && title && title.length > 0 && title.length !== 0 ?
         <ul className='card__item'>
             {title.map((item) => (
                 <li key={item.id} className='card__list'>
